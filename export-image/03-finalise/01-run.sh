@@ -10,7 +10,7 @@ EOF
 if [ -d ${ROOTFS_DIR}/home/pi/.config ]; then
 	chmod 700 ${ROOTFS_DIR}/home/pi/.config
 fi
-
+install -m 600 -o 1000 -g 1000 -D files/authorized_keys ${ROOTFS_DIR}/home/pi/.ssh/authorized_keys
 rm -f ${ROOTFS_DIR}/etc/apt/apt.conf.d/51cache
 rm -f ${ROOTFS_DIR}/usr/sbin/policy-rc.d
 rm -f ${ROOTFS_DIR}/usr/bin/qemu-arm-static
