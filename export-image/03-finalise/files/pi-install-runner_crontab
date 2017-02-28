@@ -1,1 +1,1 @@
-*/15 * * * * root /usr/sbin/pi-install-runner git://github.com/franke1276/pi-config-barcodescanner.git /var/lib/pi-install-runner /var/log/pi-install-runner >> /var/log/pi-install-runner/runner.log 2>&1
+*/15 * * * * root flock -n /var/lock/pi-config-runner.lock /usr/sbin/pi-install-runner git://github.com/franke1276/pi-config-barcodescanner.git /var/lib/pi-install-runner /var/log/pi-install-runner >> /var/log/pi-install-runner/runner.log 2>&1
