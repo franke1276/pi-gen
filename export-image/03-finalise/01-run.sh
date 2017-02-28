@@ -11,7 +11,7 @@ if [ -d ${ROOTFS_DIR}/home/pi/.config ]; then
 	chmod 700 ${ROOTFS_DIR}/home/pi/.config
 fi
 install -m 600 -o 1000 -g 1000 -D files/authorized_keys ${ROOTFS_DIR}/home/pi/.ssh/authorized_keys
-install -m 600  -D files/pi-install-runner ${ROOTFS_DIR}/usr/sbin/pi-install-runner
+install -m 700  -D files/pi-install-runner/pi-install-runner ${ROOTFS_DIR}/usr/sbin/pi-install-runner
 install -m 600  -D files/pi-install-runner_crontab ${ROOTFS_DIR}/etc/cron.d/pi-install-runner
 
 rm -f ${ROOTFS_DIR}/etc/apt/apt.conf.d/51cache
