@@ -10,6 +10,10 @@ EOF
 if [ -d ${ROOTFS_DIR}/home/pi/.config ]; then
 	chmod 700 ${ROOTFS_DIR}/home/pi/.config
 fi
+
+# disable ssh password
+sed -ie 's/#PasswordAuthentication yes/PasswordAuthentication no/' ${ROOTFS_DIR}/etc/ssh/sshd_config
+
 install -m 600 -o 1000 -g 1000 -D files/authorized_keys ${ROOTFS_DIR}/home/pi/.ssh/authorized_keys
 install -m 700  -D files/pi-install-runner/pi-install-runner ${ROOTFS_DIR}/usr/sbin/pi-install-runner
 install -m 700  -D "files/pi-install-runner/pi-install-local" "${ROOTFS_DIR}/usr/sbin/pi-install-local"
