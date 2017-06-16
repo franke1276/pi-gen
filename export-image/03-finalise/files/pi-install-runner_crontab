@@ -1,1 +1,1 @@
-0 * * * * root /usr/sbin/pi-install-local >> /var/log/pi-install-runner/runner.log 2>&1
+*/15 * * * * root /usr/sbin/pi-install-local >> /var/log/pi-install-runner/runner.log 2>&1
